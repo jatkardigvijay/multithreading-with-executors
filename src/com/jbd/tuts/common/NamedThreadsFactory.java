@@ -2,7 +2,7 @@ package com.jbd.tuts.common;
 
 import java.util.concurrent.ThreadFactory;
 
-public class NamedThreadFactory implements ThreadFactory {
+public class NamedThreadsFactory implements ThreadFactory {
 
 	private static int count = 0;
 	private static String NAME = "MyThread";

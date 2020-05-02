@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import com.jbd.tuts.common.LoopTaskC;
-import com.jbd.tuts.common.NamedThreadFactory;
+import com.jbd.tuts.common.NamedThreadsFactory;
 
 public class NamingExecutorThreads {
 
@@ -14,7 +14,7 @@ public class NamingExecutorThreads {
 
 		System.out.println(" [ " + currentThreadName + " ] Main thread starts here...");
 
-		ExecutorService exeService = Executors.newCachedThreadPool(new NamedThreadFactory());
+		ExecutorService exeService = Executors.newCachedThreadPool(new NamedThreadsFactory());
 
 		exeService.execute(new LoopTaskC());
 		exeService.execute(new LoopTaskC());

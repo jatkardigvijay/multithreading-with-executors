@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import com.jbd.tuts.common.LoopTaskC;
-import com.jbd.tuts.common.NamedThreadFactory;
+import com.jbd.tuts.common.NamedThreadsFactory;
 
 public class UsingCachedThreadPoolPart2 {
 
@@ -15,7 +15,7 @@ public class UsingCachedThreadPoolPart2 {
 
 		System.out.println(" [ " + currentThreadName + " ] Main thread starts here...");
 
-		ExecutorService exeService = Executors.newCachedThreadPool(new NamedThreadFactory());
+		ExecutorService exeService = Executors.newCachedThreadPool(new NamedThreadsFactory());
 
 		exeService.execute(new LoopTaskC()); // Task-1
 		exeService.execute(new LoopTaskC()); // Task-2
