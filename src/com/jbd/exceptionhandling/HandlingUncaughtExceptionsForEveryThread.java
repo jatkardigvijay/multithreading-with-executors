@@ -1,0 +1,21 @@
+package com.jbd.exceptionhandling;
+
+import com.jbd.tuts.common.ExceptionLeakingTask;
+import com.jbd.tuts.common.ThreadExceptionHandler;
+
+public class HandlingUncaughtExceptionsForEveryThread {
+
+	public static void main(String[] args) {
+		String currentThreadName = Thread.currentThread().getName();
+		System.out.println("[" + currentThreadName + "] Main thread starts here ...");
+
+		Thread.setDefaultUncaughtExceptionHandler(new ThreadExceptionHandler("Default_Handler"));
+
+		new Thread(new ExceptionLeakingTask(), "MyThread-1").start();
+		new Thread(new ExceptionLeakingTask(), "MyThread-2").start();
+		new Thread(new ExceptionLeakingTask(), "MyThread-3").start();
+		new Thread(new ExceptionLeakingTask(), "MyThread-4").start();
+
+		System.out.println("[" + currentThreadName + "] Main thread ends here ...");
+	}
+}

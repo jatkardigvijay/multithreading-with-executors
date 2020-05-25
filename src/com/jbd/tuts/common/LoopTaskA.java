@@ -15,7 +15,7 @@ public class LoopTaskA implements Runnable {
 			System.out.println("<Task-" + id + ">Tick tick : " + i);
 
 			try {
-				TimeUnit.MILLISECONDS.sleep((long) (Math.random()*1000));
+				TimeUnit.MILLISECONDS.sleep((long) (Math.random() * 1000));
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
